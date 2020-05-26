@@ -3,10 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1">
-<!-- Main CSS -->
 <link rel="stylesheet" href="css/main.css">
-
-<title>PHP Image Slideshow</title>
+<title>Image Slideshow</title>
 </head>
 <style>
 body {
@@ -31,24 +29,26 @@ body {
 </style>
 <body>
     <div class="container py-4">
-        <h1>PHP Image Slideshow</h1>
+        <h1>Slider</h1>
         <body>
+        <?php if(isset($_GET['key']) && $_GET['key'] =="Rsp@2020") { ?>
             <form action="index.php" id="image" name='image'
-                method="POST" enctype="multipart/form-data"
-                onsubmit="return validate();">
+                  method="POST" enctype="multipart/form-data"
+                  onsubmit="return validate();">
                 <div class="form-row">
                     <input type="file" id="file-input" name="file-input[]"
-                        multiple="multiple">
+                           multiple="multiple">
                 </div>
                 <div class="button-row">
                     <input type="submit" id="submit" name="submit"
-                        value="Post to Slideshow"><span id="validation_error"></span>
+                           value="Post to Slideshow"><span id="validation_error"></span>
                 </div>
-                <div class="button-row1">
+            </form>
+        <?php } ?>
+                <div class="button-row">
                     <input type='submit' id='slideshow' name='slideshow'
                            value='Start Slideshow'>
                 </div>
-            </form>
         </body>
         <div>
             <!-- gallery class need for using gallery -->
